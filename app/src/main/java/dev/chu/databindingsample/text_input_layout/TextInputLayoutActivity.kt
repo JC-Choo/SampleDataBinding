@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import dev.chu.databindingsample.R
 import dev.chu.databindingsample.databinding.ActivityTextInputLayoutBinding
+import dev.chu.databindingsample.toast
 
 /**
  * 참고 : https://medium.com/better-programming/textinputlayout-form-validation-using-data-binding-in-android-86aea8645a11
@@ -28,7 +29,9 @@ class TextInputLayoutActivity : AppCompatActivity() {
 
         binding.loginButton.setOnClickListener {
             if (isValidate()) {
-                Toast.makeText(this, "validated", Toast.LENGTH_SHORT).show()
+                toast("인증")
+            } else {
+                toast("미인증")
             }
         }
     }
